@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+.agenda-main {
+    display: flex;
+    height: 100vh;
+}
+.sidebar {
+    margin: 10px;
+    flex: 0.15;
+}
+.sidebar-title {
+    display: flex;
+    align-items: center;
+    gap: 4%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #AEAEAE;
+}
+img.app-icon {
+    width: 40px;
+    flex: 0.25;
+}
+span.app-header {
+    font-size: 20px;
+}
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    gap: 10px;
+}
+.sidebar-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+img.item-icon {
+    width: 30px;
+}
