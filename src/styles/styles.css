@@ -2,13 +2,17 @@
     margin: 0;
     box-sizing: border-box;
 }
+.display-none {
+    display: none;
+}
 .agenda-main {
     display: flex;
     height: 100vh;
 }
 .sidebar {
-    margin: 10px;
+    padding: 10px 0px 10px;
     flex: 0.15;
+    border-right: 1px solid #AEAEAE;
 }
 .sidebar-title {
     display: flex;
@@ -27,7 +31,7 @@ span.app-header {
 .sidebar-content {
     display: flex;
     flex-direction: column;
-    padding-top: 10px;
+    padding: 10px;
     gap: 10px;
 }
 .sidebar-item {
@@ -37,4 +41,185 @@ span.app-header {
 }
 img.item-icon {
     width: 30px;
+}
+.agenda-content {
+    width: 100%;
+    flex: 0.85;
+}
+.todo-header {
+    display: flex;
+    height: 6rem;
+    /* flex: 0.85; */
+    border-bottom: 1px solid #AEAEAE;
+}
+.todo-title {
+    flex: 0.4;
+}
+.todo-title span {
+    font-size: 70px;
+    padding-left: 10px;
+}
+.search-div {
+    display: flex;
+    flex: 0.7;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.field-container {
+    width: 100%;
+    padding-bottom: 4%;
+    padding-left: 2%;
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+.field-container input[type="text"] {
+    width: 50%;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #5E5E5E;
+}
+/* button#new-project-btn {
+    height: 30px;
+    border: 1px solid #5E5E5E;
+    border-radius: 10px;
+    background-color: #FFF;
+} */
+a.delete-project img {
+    width: 30px;
+}
+.app-content {
+    height: calc(100vh - 6rem);
+    display: grid;
+}
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    height: 250px;
+    margin: 1rem;
+    gap: 10px;
+}
+.project-card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid #AEAEAE;
+    border-radius: 5px;
+}
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0.2;
+    border-bottom: 1px solid #AEAEAE;
+}
+.project-title span {
+    font-size: 30px;
+}
+.project-header div.project-btns {
+    display: flex;
+    flex: 0.4;
+    align-items: center;
+}
+button.create-tasks, 
+button.submit-btn,
+button#new-project-btn {
+    border: 1px solid #5E5E5E;
+    border-radius: 5px;
+    background-color: #FFF;
+    height: 30px;
+    cursor: pointer;
+}
+.project-body {
+    flex: 0.6;
+}
+.project-footer {
+    display: flex;
+    flex: 0.2;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #AEAEAE;
+}
+.task-info {
+    flex: 0.6;
+}
+div.project-footer  .project-btns {
+    display: flex;
+    flex: 0.2;
+    align-items: center;
+    justify-content: flex-end;
+}
+a.view-tasks {
+    /* flex: 0.8; */
+    /* white-space: nowrap; */
+    font-size: 12px;
+}
+a.delete-project {
+    flex: 0.2;
+}
+
+.empty-board {
+    display: flex;
+}
+.empty-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    flex-direction: column;
+}
+img.empty-img {
+    width: 300px;
+    filter: opacity(0.2);
+}
+.empty-text {
+    text-align: center;
+    font-size: 18px;
+}
+span.empty-msg {
+    display: block;
+}
+
+/* New Project Modal */
+.new-project-modal {
+    position: absolute;
+    top: 30%;
+    left: 42%;
+    background-color: #FFF;
+    width: 350px;
+    border: 1px solid black;
+    border-radius: 7px;
+}
+.dialog {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 10px;
+}
+div.new-project-modal .header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    border-bottom: 1px solid #AEAEAE;
+    font-weight: bold;
+}
+span.close,
+a.delete-project {
+    cursor: pointer;
+}
+div.new-project-modal .body {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+div.new-project-modal input[type="text"] {
+    width: 100%;
+    height: 30px;
+}
+div.new-project-modal textarea.project-description {
+    width: 100%;
+    resize: none;
+}
+.footer {
+    display: flex;
+    justify-content: center;
 }

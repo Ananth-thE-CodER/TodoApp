@@ -25,7 +25,94 @@
                 </div>
             </div>
         </div>
+        <div class="agenda-content">
+            <div class="todo-header">
+                <div class="todo-title">
+                    <span>Agenda</span>
+                </div>
+                <div class="search-div">
+                    <div class="field-container">
+                        <input type="text" name="search-field" placeholder="Search...">
+    
+                        <div class="project-btn">
+                            <button type="button" id="new-project-btn" class="project-btn">New Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="app-content">
+                <!-- <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">
+                                <span>Project Title</span>
+                            </div>
+                            <div class="project-btns">
+                                <button type="button" class="create-tasks">Create Tasks</button>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-desc">
+                                This is the project footer
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="task-info">
+                                <div class="task-status">
+                                    <span class="task-completed">03</span>/<span class="task-total">10</span> Completed.
+                                </div>
+
+                                <a class="view-tasks">View Tasks</a>
+                            </div>
+                            <div class="project-btns">
+                                <a class="delete-project">
+                                    <img src="./assets/trash-can-outline.svg" alt="Delete Project">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+
+                <div class="empty-board">
+                    <div class="empty-div">
+                        <img src="./assets/man.png" alt="Empty Projects" class="empty-img">
+                        <div class="empty-text">
+                            <span class="empty-msg">Oops!! You don't seem to have created any projects yet.</span>
+                            <span class="empty-msg">Click the "New Project" button on top right to get started.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- New Project Modal -->
+     <div id="newProjectModal" class="new-project-modal display-none">
+        <div class="dialog">
+            <div class="header">
+                <div class="modal-title">
+                    <span>New Project</span>
+                </div>
+                <div class="close-btn">
+                    <span class="close">&times;</span>
+                </div>
+            </div>
+            <div class="body">
+                <div class="project-name">
+                    <input type="text" name="project-name" placeholder="Name...">
+                </div>
+                <div class="project-description">
+                    <textarea rows="15" cols="10" class="project-description" placeholder="About your project"></textarea>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="submit-div">
+                    <button type="button" class="submit-btn">Submit</button>
+                </div>
+            </div>
+        </div>
+     </div>
 </body>
 
 </html>
