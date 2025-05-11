@@ -2,7 +2,6 @@ import { StorageService } from "./storageService";
 
 export class ProjectManager {
     constructor() {
-        //let storageService = new StorageService();
         this.projects = StorageService.loadProjects();
     }
 
@@ -13,11 +12,16 @@ export class ProjectManager {
 
     deleteProject(id) {
         let project = this.projects.filter(p => p.id == id);
-        const idx = this.projects.indexOf(project);
+        const idx = this.projects.indexOf(project[0]);
         if (idx > -1) {
             this.projects.splice(idx, 1);
         }
         this.save();
+    }
+
+    getProject(id) {
+        let project = this.projects.filter(p => p.id == id);
+        return project[0];
     }
 
     save() {

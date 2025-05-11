@@ -1,13 +1,13 @@
+import { Tasks } from "./tasks";
+
 export class Project {
-    constructor(name, description) {
+    constructor(name, description, id) {
         this._name = name;
         this._description = description;
-        this.id = crypto.randomUUID();
+        this.id = id ? id : crypto.randomUUID();
         this._totalTaskCount = 0;
         this._completedTaskCount = 0;
         this._tasks = [];
-
-        console.log("Project class defined");
     }
 
     get name() {
@@ -26,10 +26,24 @@ export class Project {
         return this._completedTaskCount;
     }
 
+    addTask(task) {
+        this._tasks.push(task);
+    }
+
+    updateTotalTaskCount() {
+        this._totalTaskCount = this._tasks.length;
+    }
+
+    updateCompletedTaskCount() {
+        let completedTasks = this._tasks.filter((t) => t._completed);
+        this._completedTaskCount = completedTasks.length
+    }
+
     static fromJSON(json) {
-        console.log("PROJECT FROMJSON")
-        const p = new Project(json._name, json._description);
-        //p.tasks = json.tasks.map(t => Task.fromJSON(t));
+        const p = new Project(json._name, json._description, json.id);
+        p._tasks = json._tasks.map(t => Tasks.fromJSON(t));
+        p.updateTotalTaskCount();
+        p.updateCompletedTaskCount();
         return p;
     }
 }

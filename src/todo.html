@@ -33,7 +33,7 @@
                 <div class="search-div">
                     <div class="field-container">
                         <input type="text" name="search-field" placeholder="Search...">
-    
+
                         <div class="project-btn">
                             <button type="button" id="new-project-btn" class="project-btn">New Project</button>
                         </div>
@@ -41,39 +41,7 @@
                 </div>
             </div>
             <div class="app-content">
-                <!-- <div class="project-grid">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-title">
-                                <span>Project Title</span>
-                            </div>
-                            <div class="project-btns">
-                                <button type="button" class="create-tasks">Create Tasks</button>
-                            </div>
-                        </div>
-                        <div class="project-body">
-                            <div class="project-desc">
-                                This is the project footer
-                            </div>
-                        </div>
-                        <div class="project-footer">
-                            <div class="task-info">
-                                <div class="task-status">
-                                    <span class="task-completed">03</span>/<span class="task-total">10</span> Completed.
-                                </div>
-
-                                <a class="view-tasks">View Tasks</a>
-                            </div>
-                            <div class="project-btns">
-                                <a class="delete-project">
-                                    <img src="./assets/trash-can-outline.svg" alt="Delete Project">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-
+                <!-- Empty Projects -->
                 <div class="empty-board">
                     <div class="empty-div">
                         <img src="./assets/man.png" alt="Empty Projects" class="empty-img">
@@ -88,7 +56,7 @@
     </div>
 
     <!-- New Project Modal -->
-     <div id="newProjectModal" class="new-project-modal display-none">
+    <div id="newProjectModal" class="modal display-none">
         <div class="dialog">
             <div class="header">
                 <div class="modal-title">
@@ -103,7 +71,8 @@
                     <input type="text" name="project-name" placeholder="Name...">
                 </div>
                 <div class="project-description">
-                    <textarea rows="15" cols="10" class="project-description" placeholder="About your project"></textarea>
+                    <textarea rows="15" cols="10" class="project-description"
+                        placeholder="About your project"></textarea>
                 </div>
             </div>
             <div class="footer">
@@ -112,7 +81,91 @@
                 </div>
             </div>
         </div>
-     </div>
+    </div>
+
+    <!-- New Task Modal -->
+    <div id="newTaskModal" class="modal display-none">
+        <div class="dialog">
+            <div class="header">
+                <div class="modal-title">
+                    <span>Create Task</span>
+                </div>
+                <div class="close-btn">
+                    <span class="close">&times;</span>
+                </div>
+            </div>
+            <div class="body">
+                <div class="field-name">
+                    <input type="hidden" name="taskProjectId" id="taskProjectId"> 
+                    <input type="text" name="task-name" class="task-name" placeholder="Name...">
+                </div>
+                <div class="task-description">
+                    <textarea rows="10" cols="10" class="task-description"
+                        placeholder="About your project"></textarea>
+                </div>
+                <div class="field-name">
+                    <label for="task-deadline">Deadline</label>
+                    <input type="date" name="task-deadline" class="task-deadline">
+                </div>
+                <div class="field-name display-flex">
+                    <label for="task-completed">Completed?</label>
+                    <input type="checkbox" name="task-completed" class="task-completed">
+                </div>
+            </div>
+            <div class="footer">
+                <div class="submit-div">
+                    <button type="button" class="confirm">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Delete Modal -->
+    <div id="projectDeleteModal" class="modal display-none">
+        <div class="dialog">
+            <div class="header">
+                <div class="modal-title">
+                    <span>Delete Project </span> <span class="project-name"></span>?
+                </div>
+                <div class="close-btn">
+                    <span class="close">&times;</span>
+                </div>
+            </div>
+            <div class="body">
+                <p class="delete-message">
+                    Are you sure you want to delete <span class="project-name"></span>?
+                    <input type="hidden" id="project-id-input" name="project-id">
+                </p>
+            </div>
+            <div class="footer">
+                <div class="footer-btn">
+                    <button type="button" class="confirm">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Tasks Modal -->
+    <!-- <div id="viewTasksModal" class="modal display-none">
+        <div class="dialog">
+            <div class="header">
+                <div class="modal-title">
+                    <div><span class="project-name"></span></div>
+                    <div><span class="task-completed"></span> of <span class="task-total"></span> Completed.</div>
+                </div>
+                <div class="close-btn">
+                    <span class="close">&times;</span>
+                </div>
+            </div>
+            <div class="body">
+                <div class="task-list">
+                    
+                </div>
+            </div>
+            <div class="footer">
+            </div>
+        </div>
+    </div> -->
 </body>
 
 </html>
