@@ -145,27 +145,40 @@
         </div>
     </div>
 
-    <!-- View Tasks Modal -->
-    <!-- <div id="viewTasksModal" class="modal display-none">
+    <!-- Edit Tasks Modal -->
+    <div id="editTasksModal" class="modal display-none">
         <div class="dialog">
             <div class="header">
-                <div class="modal-title">
-                    <div><span class="project-name"></span></div>
-                    <div><span class="task-completed"></span> of <span class="task-total"></span> Completed.</div>
-                </div>
+                <!-- <div class="modal-title">
+                    <span class="task-title"></span>
+                </div> -->
                 <div class="close-btn">
                     <span class="close">&times;</span>
                 </div>
             </div>
             <div class="body">
-                <div class="task-list">
-                    
+                <div class="field-name">
+                    <input type="hidden" name="taskID" id="taskId"> 
+                    <input type="text" name="task-name" class="task-name" placeholder="Name...">
+                </div>
+                <div class="task-description">
+                    <textarea rows="10" cols="10" class="task-description"
+                        placeholder="About your project"></textarea>
+                </div>
+                <div class="field-name">
+                    <label for="task-deadline">Deadline</label>
+                    <input type="date" name="task-deadline" class="task-deadline">
+                </div>
+                <div class="field-name display-flex">
+                    <label for="task-completed">Completed?</label>
+                    <input type="checkbox" name="task-completed" class="task-completed">
                 </div>
             </div>
             <div class="footer">
+                <button class="task-save">Save</button>
             </div>
         </div>
-    </div> -->
+    </div>
 </body>
 
 </html>

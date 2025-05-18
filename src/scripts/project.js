@@ -26,6 +26,10 @@ export class Project {
         return this._completedTaskCount;
     }
 
+    getTask(id) {
+       return this._tasks.find((t) => t.id == id);
+    }
+
     addTask(task) {
         this._tasks.push(task);
     }

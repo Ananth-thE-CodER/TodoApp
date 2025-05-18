@@ -122,7 +122,7 @@ function RenderTasks(project, tasks) {
                                         <span>${task.name}</span>
                                     </div>
                                     <div class="task-btns">
-                                        <button type="button" class="" data-projectID="${task.id}">Edit Task</button>
+                                        <button type="button" class="edit-task" data-taskID="${task.id}" data-projectId="${project.id}">Edit Task</button>
                                     </div>
                                 </div>
                                 <div class="task-body">
@@ -155,7 +155,7 @@ function RenderTasks(project, tasks) {
         appContent.innerHTML = taskHTML;
 
         // addDeleteListener();
-        // createTaskListener();
+        editTaskListener();
         // viewTaskListener();
     }
     else {
@@ -225,7 +225,7 @@ function createTaskListener() {
     for (const btn of createTaskBtns) {
         btn.addEventListener("click", (e) => {
             let modal = document.getElementById("newTaskModal");
-            modal.querySelector("input#taskProjectId").value = btn.dataset.projectid;
+            modal.querySelector("input#taskProjectId").value = btn.dataset.taskid;
             modal.classList.remove("display-none");
         })
     }
@@ -258,6 +258,29 @@ function viewTaskListener() {
             let project = manager.getProject(projectId);
             let tasks = project._tasks;
             RenderTasks(project, tasks);
+        })
+    }
+}
+
+function editTaskListener() {
+    let editTaskBtns = document.querySelectorAll("button.edit-task");
+    let manager = new ProjectManager();
+
+    for (const btn of editTaskBtns) {
+        btn.addEventListener("click", (e) => {
+            let modal = document.getElementById("editTasksModal");
+            let projectId = e.target.dataset.projectid;
+            let project = manager.getProject(projectId);
+            let task = project.getTask(btn.dataset.taskid);
+            if (!task) throw Error("Task not found!!");
+            modal.querySelector("input.task-name").value = task._name;
+            modal.querySelector("textarea.task-description").innerText = task._description;
+            modal.querySelector("input.task-deadline").value = task._deadline;
+            if (task._completed) {
+                modal.querySelector("input.task-completed").setAttribute("checked", true);
+            }
+            modal.querySelector("input#taskId").value = btn.dataset.taskid;
+            modal.classList.remove("display-none");
         })
     }
 }
